@@ -309,6 +309,7 @@ textarea:focus-visible {
 /* Yan yana düğmeler dar ekranda sığsın */
 .grid2 > .btn { font-size: 14px; padding: 0 10px; text-align: center; line-height: 1.2; }
 .menu-hero .h1 { font-size: 34px; }
+
 /* ---- css/components.css ---- */
 /* Ortak bileşenler: ayar alanları, seçiciler, çipler, sekmeler, listeler, istatistik, profil, başarım, modal */
 
@@ -369,6 +370,15 @@ textarea:focus-visible {
   border-color: var(--amber);
   animation: tutorialPulse 1.4s infinite;
 }
+/* Rehber açıkken: "Nasıl Oynanır?" ve oku dışındaki her şey bulanık, soluk ve tıklanamaz */
+body.tutorial-aktif .app-header,
+body.tutorial-aktif #screen-menu > *:not(.menu-secondary),
+body.tutorial-aktif .menu-secondary > *:not(#tutorial-arrow):not(#menu-how-btn) {
+  filter: blur(2.5px) brightness(0.4);
+  pointer-events: none;
+  user-select: none;
+}
+body.tutorial-aktif #menu-play-btn:disabled { opacity: 1; }
 @keyframes tutorialPulse {
   0%, 100% { box-shadow: 0 4px 0 var(--edge), 0 0 0 0 rgba(255, 182, 39, 0.5); }
   50% { box-shadow: 0 4px 0 var(--edge), 0 0 0 7px rgba(255, 182, 39, 0); }
@@ -828,6 +838,7 @@ textarea:focus-visible {
   font-family: monospace;
   font-size: 12.5px;
 }
+
 
 /* ---- css/game.css ---- */
 /* Oyun: plak, ekolayzır, tur ekranı, cevap kartı, oyun sonu, yükleme */

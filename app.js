@@ -35,6 +35,7 @@
   };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/icons.js ---- */
 /* Tek çizgili SVG ikon seti (emoji yerine). Kullanım: App.icon("play", 20) -> SVG metni */
 (function (App) {
@@ -94,6 +95,7 @@
   App.ikonlu = ikonlu;
   App.IKON_ADLARI = Object.keys(YOLLAR);
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/data/ozel-detaylar.js ---- */
 /* Şarkılara özel hikaye ve ek bilgiler: kimlik -> [hikaye, ekBilgi] */
@@ -169,6 +171,7 @@
     "yb_caz_06": ["60'ların soul ve caz vokal geleneğini Mark Ronson'ın modern prodüksiyonuyla birleştiren ikonik parçadır.", "Albüm Amy Winehouse'a bir gecede 5 Grammy Ödülü kazandırmıştır."]
   };
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/data/sarki-veritabani.js ---- */
 /* Şarkı veritabanı: her kategori için 30 şarkı. Kayıt: [ad, sanatçı, yıl, albüm, alternatif adlar] */
@@ -542,6 +545,7 @@
   ];
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/data/sanatci-biyografileri.js ---- */
 /* Sanatçı biyografileri: sanatçı adı -> kısa, genel bilgi metni (cevap ekranındaki "Sanatçı ve Hayatı" bölümü) */
 (function (App) {
@@ -726,6 +730,7 @@
   };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/data/sarkilar.js ---- */
 /* Şarkı veritabanından düz şarkı listesini üretir ve filtreleme yardımcısını sunar */
 (function (App) {
@@ -776,6 +781,7 @@
   App.SARKILAR = SARKILAR;
   App.getUygunSarkilar = getUygunSarkilar;
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/storage.js ---- */
 /* Güvenli bellek & localStorage yönetimi, uygulama durumu, yedekleme (dışa/içe aktarma) */
@@ -976,6 +982,7 @@
   App.veriyiIceAktar = veriyiIceAktar;
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/text-match.js ---- */
 /* Metin normalizasyonu ve Levenshtein toleransı ile şarkı adı eşleştirme */
 (function (App) {
@@ -1053,6 +1060,7 @@
   App.tahminDogruMu = tahminDogruMu;
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/utils.js ---- */
 /* Puanlama ve genel yardımcı fonksiyonlar */
 (function (App) {
@@ -1109,6 +1117,7 @@
   App.escapeHtml = escapeHtml;
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/ui.js ---- */
 /* Ortak arayüz yardımcıları: geri bildirim mesajı, equalizer, onay penceresi */
 (function (App) {
@@ -1149,6 +1158,7 @@
 
   App.ui = { updateEqualizerUI, showFeedback, hideFeedback, onayIste };
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/tooltip.js ---- */
 /* Bilgi balonu (tooltip): masaüstünde hover/odak, dokunmatikte tıkla-aç / dışarı dokun-kapat */
@@ -1242,6 +1252,7 @@
   App.tooltip = { gizle };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/audio-engine.js ---- */
 /* iOS uyumlu tekil ses motoru ve çok aşamalı iTunes önizleme araması */
 (function (App) {
@@ -1250,7 +1261,11 @@
   const { appState, normalizeEt, ui } = App;
   const globalAudio = document.getElementById("global-audio-player");
 
+  // 0,1 sn'lik sessiz WAV (8 kHz, 8 bit, mono) (iOS ses kilidini açmak için)
+  const SESSIZ_WAV = "data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YSADAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA==";
+
   const SesMotoru = {
+    blobAdresleri: {},
     caliyorMu: false,
     baslangicSarkiSn: 0,
     hedefBitisSn: 0,
@@ -1261,21 +1276,44 @@
     calId: 0,             // Her durdurma/yeni çalmada artar; eski asenkron işlemleri geçersiz kılar
     onCalmaBasladi: null, // Oyun ekranı ilerleme çubuğunu bağlamak için
 
+    // iOS, kaynağı olmayan bir <audio> öğesini "kilitli" bırakır; bu yüzden önce çok kısa sessiz bir kayıt çalınır.
+    // Kullanıcı dokunuşu içinde çağrılmalıdır. Bir kez açılan öğe sonradan koddan çalınabilir.
     iosSesKilidiniAc() {
-      if (this.iosKilidiAcildi || !globalAudio) return;
+      if (this.iosKilidiAcildi || !globalAudio || this.caliyorMu) return;
       try {
         globalAudio.muted = true;
+        globalAudio.src = SESSIZ_WAV;
+        this.aktifUrl = "";
         const p = globalAudio.play();
+        const geriAl = () => { globalAudio.muted = !!appState.ayarlar.sessiz; };
         if (p !== undefined) {
           p.then(() => {
-            globalAudio.pause();
-            globalAudio.muted = !!appState.ayarlar.sessiz;
+            // Bu arada gerçek bir şarkı başladıysa ona dokunma
+            if (globalAudio.src === SESSIZ_WAV) globalAudio.pause();
+            geriAl();
             this.iosKilidiAcildi = true;
-          }).catch(() => {
-            globalAudio.muted = !!appState.ayarlar.sessiz;
-          });
+          }).catch(geriAl);
         }
       } catch (e) {}
+    },
+
+    // Önizleme adresi doğrudan çalmazsa (iOS, "audio/x-m4p" gibi alışılmadık tipi reddedebilir)
+    // dosyayı indirip doğru tipte (audio/mp4) yerel bir adres olarak veririz
+    async sesiBlobOlarakYukle(url) {
+      if (this.blobAdresleri[url]) return this.blobAdresleri[url];
+      try {
+        const controller = new AbortController();
+        const id = setTimeout(() => controller.abort(), 20000);
+        const res = await fetch(url, { signal: controller.signal });
+        clearTimeout(id);
+        if (!res.ok) return "";
+        const ham = await res.blob();
+        const blobUrl = URL.createObjectURL(new Blob([ham], { type: "audio/mp4" }));
+        this.blobAdresleri[url] = blobUrl;
+        return blobUrl;
+      } catch (e) {
+        return "";
+      }
     },
 
     setSessiz(sessiz) {
@@ -1285,7 +1323,7 @@
       }
     },
 
-    itunesJsonpAra(sorguMetni, ulke, timeoutMs = 3000) {
+    itunesJsonpAra(sorguMetni, ulke, timeoutMs = 6000) {
       return new Promise((resolve) => {
         const cbName = "itunes_cb_" + Math.random().toString(36).substring(2, 10);
         const script = document.createElement("script");
@@ -1320,7 +1358,7 @@
       const encoded = encodeURIComponent(sorguMetni);
       try {
         const controller = new AbortController();
-        const id = setTimeout(() => controller.abort(), 2200);
+        const id = setTimeout(() => controller.abort(), 6000);
         const res = await fetch(`https://itunes.apple.com/search?term=${encoded}&country=${ulke}&media=music&entity=song&limit=10`, { signal: controller.signal });
         clearTimeout(id);
         if (res.ok) {
@@ -1329,7 +1367,7 @@
         }
       } catch (e) {}
 
-      const jsonpData = await this.itunesJsonpAra(sorguMetni, ulke, 2800);
+      const jsonpData = await this.itunesJsonpAra(sorguMetni, ulke, 6000);
       if (jsonpData && Array.isArray(jsonpData.results) && jsonpData.results.length > 0) {
         return jsonpData.results;
       }
@@ -1404,7 +1442,7 @@
         })
       );
 
-      const timeoutPromise = new Promise(r => setTimeout(r, 2800));
+      const timeoutPromise = new Promise(r => setTimeout(r, 7000));
       await Promise.race([oncelikPromise, timeoutPromise]);
 
       (async () => {
@@ -1464,6 +1502,8 @@
         }
       };
 
+      let blobDenendi = false;
+
       const baslatTekilAudio = (url) => {
         try {
           globalAudio.muted = !!appState.ayarlar.sessiz;
@@ -1510,18 +1550,39 @@
 
           globalAudio.onended = tamamla;
 
-          globalAudio.onerror = () => {
+          // Doğrudan adres çalmadıysa bir kez, doğru tipte yerel kopyayla dene
+          const blobIleDene = () => {
+            blobDenendi = true;
+            this.sesiBlobOlarakYukle(url).then((blobUrl) => {
+              if (benimId !== this.calId) return;
+              if (blobUrl) {
+                baslatTekilAudio(blobUrl);
+              } else {
+                nihaiHata();
+              }
+            });
+          };
+
+          const nihaiHata = () => {
             this.durdur();
             sarki.ses_url = "";
             this.aktifUrl = "";
             if (onHata) onHata("Ses akışı yenileniyor, lütfen tekrar 'Turu Başlat' düğmesine dokunun.");
           };
 
+          globalAudio.onerror = () => {
+            if (benimId !== this.calId) return;
+            if (!blobDenendi) blobIleDene();
+            else nihaiHata();
+          };
+
           const playPromise = globalAudio.play();
           if (playPromise !== undefined) {
-            playPromise.catch(() => {
+            playPromise.catch((err) => {
               // Bu çalma isteği bu arada iptal edildiyse (yeni tur/yeni çalma) yeni oturuma dokunma
               if (benimId !== this.calId) return;
+              // Biçim / kaynak sorunu: yerel kopyayla bir kez daha dene (dokunuş izni sorunu değil)
+              if (err && err.name === "NotSupportedError" && !blobDenendi) { blobIleDene(); return; }
               this.durdur();
               if (onHata) onHata("Ses hazır! Dinlemek için tekrar '▶ Turu Başlat' düğmesine dokunun.");
             });
@@ -1553,6 +1614,7 @@
 
   App.SesMotoru = SesMotoru;
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/router.js ---- */
 /* Ekran yönetimi ve hash tabanlı yönlendirme */
@@ -1605,8 +1667,8 @@
 
   function handleRoute(route) {
     let ekran = ROUTE_EKRAN[route] ? route : "menu";
-    // İlk girişte rehber tamamlanana kadar oyun ve istatistik ekranları kilitlidir
-    if (App.tutorialKilitliMi && App.tutorialKilitliMi() && (ekran === "ayarlar" || ekran === "istatistikler")) {
+    // İlk girişte rehber tamamlanana kadar menü ve "Nasıl Oynanır" dışındaki tüm ekranlar kilitlidir
+    if (App.tutorialKilitliMi && App.tutorialKilitliMi() && ekran !== "menu" && ekran !== "nasil-oynanir") {
       ekran = "menu";
       hashiGeriYukle(ekran);
     }
@@ -1660,6 +1722,7 @@
   };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/screens/header.js ---- */
 /* Üst çubuk: ana sayfa, yardım ve sessize alma düğmeleri */
 (function (App) {
@@ -1695,6 +1758,7 @@
   App.guncelleMuteUI = guncelleMuteUI;
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/screens/menu.js ---- */
 /* Ana menü ekranı ve "Nasıl Oynanır" ekranı */
 (function (App) {
@@ -1714,9 +1778,12 @@
     document.getElementById("menu-stats-btn").disabled = kilitli;
     document.getElementById("tutorial-arrow").style.display = kilitli ? "flex" : "none";
     document.getElementById("menu-how-btn").classList.toggle("tutorial-highlight", kilitli);
+    // Rehber açıkken yalnızca "Nasıl Oynanır?" parlak kalır; geri kalan her şey soluk, bulanık ve tıklanamaz
+    document.body.classList.toggle("tutorial-aktif", kilitli);
   }
 
   function tutorialiTamamla() {
+    document.body.classList.remove("tutorial-aktif");
     if (appState.tutorial_tamamlandi) return;
     appState.tutorial_tamamlandi = true;
     veriyiKaydet();
@@ -1756,6 +1823,7 @@
     if (e.target === scoreModal) scoreModal.classList.remove("active");
   });
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/screens/settings.js ---- */
 /* Oyun ayarları ekranı */
@@ -1958,6 +2026,7 @@
     renderSettings();
   });
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/screens/game.js ---- */
 /* Oyun başlatma ve tur ekranı (dinleme, tahmin, aşama geçişi) */
@@ -2461,6 +2530,7 @@
   };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/screens/round-result.js ---- */
 /* Tur sonu şarkı bilgi kartı */
 (function (App) {
@@ -2608,6 +2678,7 @@
   App.roundResult = { goster };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/screens/game-over.js ---- */
 /* Oyun sonu özet ekranı */
 (function (App) {
@@ -2695,6 +2766,7 @@
   App.gameOver = { goster };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/screens/stats.js ---- */
 /* İstatistikler ekranı */
 (function (App) {
@@ -2764,6 +2836,7 @@
   });
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/screens/backup.js ---- */
 /* Veri yedekleme: tüm appState tek kod olarak kopyalanır / yüklenir (Profil ekranı) */
 (function (App) {
@@ -2823,6 +2896,7 @@
     });
   });
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/screens/collection.js ---- */
 /* Şarkı koleksiyonu: cevap ekranından kaydetme ve Koleksiyonum ekranında dinleme */
@@ -2967,6 +3041,7 @@
   App.collection = { butonuGuncelle };
 })(window.IlkNota = window.IlkNota || {});
 
+
 /* ---- js/screens/profile.js ---- */
 /* Profil ekranı: isim, avatar, genel başarı yüzdesi, favori tür ve en iyi tahmin edilen şarkı */
 (function (App) {
@@ -3072,6 +3147,7 @@
   document.getElementById("menu-profile-btn").addEventListener("click", () => router.navigate("profil"));
   document.getElementById("profile-achievements-btn").addEventListener("click", () => router.navigate("basarimlar"));
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/screens/achievements.js ---- */
 /* Başarımlar ve rozetler: günlük giriş serisi, doğru tahmin serisi ve görev ilerlemeleri */
@@ -3186,6 +3262,7 @@
 
   App.basarim = { toplam: ROZETLER.length, girisSerisiniGuncelle, dogruTahmin, seriyiKir, oyunBitti, rozetleriKontrolEt };
 })(window.IlkNota = window.IlkNota || {});
+
 
 /* ---- js/main.js ---- */
 /* Uygulama başlatıcı: kayıtlı veriyi yükler ve ilk ekranı açar */
